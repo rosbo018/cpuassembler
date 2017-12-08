@@ -1,0 +1,9 @@
+there will be two sections to the text files that the assembler will read: the .db section, where the data will be stored, and the .text section, where the instructions will be stored
+
+.db section will have variables, and variable pointers
+
+x:1
+y:*x
+z:[1,2,3,4,5,6]
+
+.text section will have instructions and labels, for the different sections

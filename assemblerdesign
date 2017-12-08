@@ -1,0 +1,27 @@
+there will be two sections to the text files that the assembler will read: the .db section, where the data will be stored, and the .text section, where the instructions will be stored
+
+.db section will have variables, and variable pointers
+
+x:1
+y:*x
+z:[1,2,3,4,5,6]
+arrays will be defined as a master pointer next to a series of the elements
+
+.text section will have instructions and labels, for the different sections
+
+labels will be pointers to the next instructon
+example
+:loop:
+LDA_D x
+the label ':loop:' will not appear in the assembled program, however, when branching to :loop:, the program will jump to the LDA_D instruction and continue executing normally. For readability, labels can be stacked:
+
+:loop:
+:nice:
+:test:
+LDA_I x
+
+all the labels will point to LDA_I
+
+instructions will be the same as the ones on the opcode, however, in an effort to differentiate between the direct and inddirect loading, the memory reference instructions will have a postfix of _D for direct memory addresing, and _I for indirect.
+
+During the assembly process, the instructions will be translated into the hex instructions that are readable by the emulator. the .text section will be parsed and the first instruction will be at 00 memory location(not including any labels), 
